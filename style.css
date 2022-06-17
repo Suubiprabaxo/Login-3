@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+  }
+
+body
+{
+	font-family: 'Poppins', sans-serif;
+}
+
+.back
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/1601775/pexels-photo-1601775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+	filter: brightness(1);
+}
+
+/* CURSOR */
+.cursor,
+.cursor2,
+.cursor3{
+	position: fixed;
+	border-radius: 50%;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: -100px;
+	top: 50%;
+	mix-blend-mode: difference;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+.cursor{
+	background-color: #fff;
+	height: 0;
+	width: 0;
+	z-index: 99999;
+}
+.cursor2,.cursor3{
+	height: 36px;
+	width: 36px;
+	z-index:99998;
+	-webkit-transition:all 0.3s ease-out;
+	transition:all 0.3s ease-out
+}
+.cursor2.hover,
+.cursor3.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none
+}
+.cursor2{
+	border: 2px solid #fff;
+	box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+}
+.cursor2.hover{
+	background: rgba(255,255,255,1);
+	box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1200px){
+	.cursor,.cursor2,.cursor3{
+		display: none
+	}
+}
+
+.container
+{
+	display: flex;
+  	justify-content: center;
+}
+
+.clock {
+	position: relative;
+	margin-top: 1rem;
+	right: 1;
+	width: 12rem;
+    height: 5rem;
+	backdrop-filter: blur(4px);
+	border-radius: 0.3rem;
+	margin-bottom: 2rem;
+}
+
+.wrapper {
+	text-align: center;
+}
+#time {
+	font-size: 35px;
+	display: inline-block;
+	color: #fff;
+}
+#dia {
+	position: relative;
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: center;
+}
+#meio {
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+}
+
+.vidro
+{
+	position: absolute;
+	text-align: center;
+	border-radius: 0.3rem;
+	top: 6.2rem;
+	width: 25rem;
+    height: 31em;
+	backdrop-filter: blur(6px);
+}
+
+.text
+{
+	margin-top: 1rem;
+	font-size: 30px;
+    letter-spacing: 5px;
+	color: #fff;
+    /* color: #ff0266; */
+	margin-bottom: 1rem;
+}
+
+.menu_login{
+	height: 27.5em;
+}
+.menu_login .logar,
+.cadastrar{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+	
+}
+.logar
+{
+	margin-top: 3rem;
+}
+.form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.menu_login .sign-in,
+.menu_login .sign-up,
+.form .caixa .check{
+	display:none;
+}
+.menu_login .tab,
+.form .caixa .label,
+.form .caixa .button{
+	text-transform:uppercase;
+}
+.menu_login .tab{
+	font-size: 22px;
+	cursor: pointer;
+	color: #ffffff;
+	margin:10px 40px 15px 50px;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.menu_login .sign-in:checked + .tab,
+.menu_login .sign-up:checked + .tab{
+	color:#ff0266;
+	border-color:#ff0266;
+}
+.form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.form .caixa .label,
+.form .caixa .input,
+.form .caixa .button{
+	width:100%;
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+	display:block;
+}
+.form .caixa .input,
+.form .caixa .button{
+	border:none;
+	padding:15px 20px;
+	margin-bottom: 1rem;
+	border-radius:8px;
+	background:rgba(255,255,255,.1);
+}
+.form .caixa label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255, 0, 0, 0.1);
+}
+#mantenha
+{
+	margin-bottom: 1rem;
+}
+
+.form .caixa label .icon:before,
+.form .caixa label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.form .caixa label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.form .caixa label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.form .caixa .check:checked + label{
+	color:#fff;
+}
+.form .caixa .check:checked + label .icon{
+	background:#ff006a;
+}
+.form .caixa .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.form .caixa .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.menu_login .sign-in:checked + .tab + .sign-up + .tab + .form .logar{
+	transform:rotate(0);
+}
+.menu_login .sign-up:checked + .tab + .form .cadastrar{
+	transform:rotate(0);
+}
+.logar .caixa input:focus ~ label,
+.logar .caixa input:valid ~ label {
+    color: #976b83;
+}
+
+.foot-lnk
+{
+	color: rgb(255, 255, 255);
+}
+.foot-lnk label
+{
+	cursor: pointer;
+}
+
+input:focus{
+	outline: none;
+	box-shadow: 0 0 5px #ff006a,
+                0 0 15px #ff006a;
+}
+
+#entrar, #cadastro
+{
+	transition: .3s;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 5px;
+}
+
+#entrar:hover {
+    background: #ff006a;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff006a,
+                0 0 25px #ff006a,
+                0 0 50px #ff006a,
+                0 0 100px #ff006a;
+  }
+#cadastro:hover {
+    background: #ff006a;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff006a,
+                0 0 25px #ff006a,
+                0 0 50px #ff006a,
+                0 0 100px #ff006a;
+  }
